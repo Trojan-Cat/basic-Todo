@@ -1,3 +1,7 @@
+## THE WHY
+
+This project was made in corelation with a video series where I go through basic docs live, and see how I go.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

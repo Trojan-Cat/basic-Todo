@@ -5,21 +5,37 @@ import AddTask from "./AddTask";
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.state = {
-      todos: [{ tstatus: false, tValue: null }],
+      todos: [],
       textbox: "asdsad",
     };
   }
 
-  handleChange(e) {}
+  handleChange(e) {
+    this.setState({ textbox: e.target.value });
+  }
 
-  //handleClick(i)
+  handleClick(i) {
+    const textBoxValue = this.state.textbox;
+    const newTodos = this.state.todos.concat([
+      { tstatus: false, tValue: textBoxValue },
+    ]);
+    this.setState({ todos: newTodos });
+  }
 
   render() {
     let textValue = this.state.textbox;
+    const handleChange = this.handleChange;
+    const handleClick = this.handleClick;
     return (
       <div>
-        <AddTask textValue={textValue} handleChange={this.handleChange} />
+        <AddTask
+          textValue={textValue}
+          handleChange={handleChange}
+          handleClick={handleClick}
+        />
         {/* <TaskList /> */}
       </div>
     );
