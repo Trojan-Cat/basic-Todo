@@ -1,4 +1,4 @@
-import React, { useImperativeHandle } from "react";
+import React from "react";
 
 function AddTask(props) {
   return (
@@ -8,7 +8,7 @@ function AddTask(props) {
         name="textbox"
         onChange={props.handleChange}
       ></input>
-      <button onClick={props.handleClick}>asdasd</button>
+      <button onClick={props.handleClick}>Add Task</button>
     </div>
   );
 }
